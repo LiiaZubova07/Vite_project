@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite_project</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div id="app"></div>
+
+	<!--------------------------------BUTTON------------------------------------>
+	<div class="modal-btn js-modal__open" data-modal="1">
+		<button class="open__btn">
+			<p>ТЫК сюда</p>
+		</button>
+	</div>
+
+	<!---------------------------------MODAL------------------------------------>
+	<div class="modal" data-modal="1">
+		<div class="modal__content">
+			<img class="modal__close js-modal__close" src='./icons8-отмена.svg'>
+			<p class="modal__title">Спасибо, Ваш ТЫК учтён</p>
+		</div>
+	</div>
+
+	<!-------------------------------ACCORDION----------------------------------->
+	<section class="accordion">
+
+		<div class="accordion__block">
+			<p class="accordion__title js__accordion">Про кошку</p>
+			<div class="accordion__content">
+				<div class="accordion__text">1. В Древнем Египте кошка считалась священным животным: за её убийство человека
+					казнили.
+					Когда
+					же питомец умирал, хозяин хоронил его на специальном кладбище и сбривал брови ‒ в знак траура.<br>2. Как
+					и у
+					людей, у кошек четыре типа темперамента. Конечно, любая кошка ‒ особенная, но характер зависит и от
+					породы.
+					Например, британцы и персы ‒ флегматики, бенгалы и тайцы ‒ холерики, русские голубые ‒ сангвиники.
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion__block">
+			<p class="accordion__title js__accordion">Про собаку</p>
+			<div class="accordion__content">
+				<div class="accordion__text">1. Когнитивные способности у собак гораздо более развиты, чем может показаться
+					на первый
+					взгляд.
+					Согласно исследованиям собаки способны запомнить от 150 до 250 слов, что сравнимо с вокабуляром
+					двухлетнего
+					ребенка.<br>2. Удивительно, но факт: после общения с собаками у некоторых людей действительно
+					нормализуется
+					артериальное давление — это доказано научно. Игра с животным успокаивает, умиротворяет, что способствует
+					увеличению выработки определенных гормонов, подавляющих гормоны стресса.<br></div>
+			</div>
+		</div>
+
+		<div class="accordion__block">
+			<p class="accordion__title js__accordion">Про хорька</p>
+			<div class="accordion__content">
+				<div class="accordion__text">1. Хорьки могут спать до двадцати часов в сутки.<br>2. Все хорьки рождаются с
+					мехом белого
+					цвета.</div>
+			</div>
+		</div>
+
+		<div class="accordion__block">
+			<p class="accordion__title js__accordion">Про слона</p>
+			<div class="accordion__content">
+				<div class="accordion__text">1. В день взрослый слон выпивает 100-200 литров воды, а то и больше.<br>
+					2. Слоны живут в среднем полвека. Самый известный долгожитель — слон по имени Линь Ван, проживший на этом
+					свете
+					86 лет.
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<!---------------------------------VIDEO------------------------------------->
+	<p class="p__video">Видео о животных</p>
+	<div class="page">
+
+		<div class="video">
+			<a class="video__link" href="https://www.youtube.com/watch?v=_YUwglmSCcY">
+				<picture>
+					<source srcset="https://i.ytimg.com/vi_webp/_YUwglmSCcY/maxresdefault.webp" type="image/webp">
+					<img class="video__media" src="https://i.ytimg.com/vi/_YUwglmSCcY/maxresdefault.jpg"
+						alt="Идеальная квартира для кота">
+				</picture>
+			</a>
+			<button class="video__button" aria-label="Запустить видео">
+				<svg width="68" height="48" viewBox="0 0 68 48">
+					<path class="video__button-shape"
+						d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z">
+					</path>
+					<path class="video__button-icon" d="M 45,24 27,14 27,34"></path>
+				</svg>
+			</button>
+		</div>
+
+		<div class="video">
+			<a class="video__link" href="https://www.youtube.com/watch?v=GyjaSxIY6gw">
+				<picture>
+					<source srcset="https://i.ytimg.com/vi_webp/GyjaSxIY6gw/maxresdefault.webp" type="image/webp">
+					<img class="video__media" src="https://i.ytimg.com/vi/GyjaSxIY6gw/maxresdefault.jpg"
+						alt="Как построить отношения с собакой">
+				</picture>
+			</a>
+			<button class="video__button" aria-label="Запустить видео">
+				<svg width="68" height="48" viewBox="0 0 68 48">
+					<path class="video__button-shape"
+						d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z">
+					</path>
+					<path class="video__button-icon" d="M 45,24 27,14 27,34"></path>
+				</svg>
+			</button>
+		</div>
+
+		<div class="video">
+			<a class="video__link" href="https://www.youtube.com/watch?v=bf0F-PbuFIY">
+				<picture>
+					<source srcset="https://i.ytimg.com/vi_webp/bf0F-PbuFIY/maxresdefault.webp" type="image/webp">
+					<img class="video__media" src="https://i.ytimg.com/vi/bf0F-PbuFIY/maxresdefault.jpg"
+						alt="Хорёк - всё о животном">
+				</picture>
+			</a>
+			<button class="video__button" aria-label="Запустить видео">
+				<svg width="68" height="48" viewBox="0 0 68 48">
+					<path class="video__button-shape"
+						d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z">
+					</path>
+					<path class="video__button-icon" d="M 45,24 27,14 27,34"></path>
+				</svg>
+			</button>
+		</div>
+
+		<div class="video">
+			<a class="video__link" href="https://www.youtube.com/watch?v=G4YCsvOyf7M">
+				<picture>
+					<source srcset="https://i.ytimg.com/vi_webp/G4YCsvOyf7M/hqdefault.webp" type="image/webp">
+					<img class="video__media" src="https://i.ytimg.com/vi/G4YCsvOyf7M/maxresdefault.jpg"
+						alt="Как говорит слон?">
+				</picture>
+			</a>
+			<button class="video__button" aria-label="Запустить видео">
+				<svg width="68" height="48" viewBox="0 0 68 48">
+					<path class="video__button-shape"
+						d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z">
+					</path>
+					<path class="video__button-icon" d="M 45,24 27,14 27,34"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- подложка под модалкой -->
+	<div class="modal__overlay js-modal__overlay"></div>
+</body>
+<script type="module" src="/main.js"></script>
+
+</html>

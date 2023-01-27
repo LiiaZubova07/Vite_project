@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBtns = document.querySelectorAll('.js-modal__open');
   const overlay = document.querySelector('.js-modal__overlay');
   const closeBtns = document.querySelectorAll('.js-modal__close');
+  const removeActive = () => {
+    document.querySelector('.modal.active').classList.remove('active');
+    document.querySelector('.modal__overlay').classList.remove('active');
+  };
 
   /*------------------------------перебор кнопок------------------------------*/
   modalBtns.forEach((btn) => {
@@ -62,16 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     'keydown',
     (e) => {
       if (e.key == 'Escape') {
-        document.querySelector('.modal.active').classList.remove('active');
-        document.querySelector('.overlay').classList.remove('active');
+        removeActive();
       }
     },
     false
   );
 
-  overlay.addEventListener('click', function () {
-    document.querySelector('.modal.active').classList.remove('active');
-    this.classList.remove('active');
+  overlay.addEventListener('click', () => {
+    removeActive();
   });
 
   /*----------------------------------------ACCORDION--------------------------------------------------*/

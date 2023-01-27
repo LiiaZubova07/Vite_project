@@ -59,11 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*-----------------------------------закрытие на ESC-------------------------*/
   document.addEventListener(
-    'keyup',
+    'keydown',
     (e) => {
-      const key = e.keyCode;
-
-      if (key == 27) {
+      if (e.key == 'Escape') {
         document.querySelector('.modal.active').classList.remove('active');
         document.querySelector('.overlay').classList.remove('active');
       }

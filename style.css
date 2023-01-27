@@ -87,6 +87,7 @@ p {
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 	text-align: center;
 	align-items: center;
+	justify-content: center;
 	padding: 30px;
 	border-radius: 10px;
 	background-color: rgba(219, 0, 219, 0.925);
@@ -104,13 +105,15 @@ p {
 }
 
 .modal__close {
-	width: 20px;
-	height: 20px;
 	position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 10px;
 	top: 10px;
-	right: 10px;
+	right: 15px;
 	cursor: pointer;
-	/* fill: black; */
+	background-color: transparent;
+	border: none;
 }
 
 .modal__title {
@@ -130,18 +133,20 @@ p {
 }
 
 .accordion__block {
-	/* display: ib;
+	display: block;
 	align-items: center;
 	text-align: center;
-	justify-content: center; */
+	justify-content: center;
 }
 
 .accordion__btn {
-	padding: 15px;
+	padding: 20px;
 	width: 300px;
-	max-width: 500px;
-	margin-bottom: 20px;
+	max-width: 900px;
+	font-size: 20px;
 	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	margin-bottom: 20px;
 	border-radius: 10px;
 }
 
@@ -151,7 +156,7 @@ p {
 }
 
 .accordion__btn:focus {
-	background-color: rgb(134, 33, 112);
+	background-color: rgb(221, 49, 184);
 	color: white;
 }
 

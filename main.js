@@ -28,6 +28,7 @@
 /*----------------------------------------------------------------------------------------------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
+	
   const modalBtns = document.querySelectorAll('.js-modal__open');
   const overlay = document.querySelector('.js-modal__overlay');
   const closeBtns = document.querySelectorAll('.js-modal__close');
@@ -46,11 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const modalId = this.getAttribute('data-modal');
       const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
 
+      const modalCloseBtn = document.querySelector('.modal__close');
+      if (modalCloseBtn) {
+        modalCloseBtn.focus();
+      }
+
       /*после нахождения модального окна добавитьклассы подложке и окну, чтобы показать их*/
       modalElem.classList.add('active');
       overlay.classList.add('active');
     });
   });
+
+
+  /*---------------------------------фокус на крестике------------------------*/
+
   /*---------------------------------закрытие на крестик----------------------*/
   closeBtns.forEach((btn) => {
     btn.addEventListener('click', function (e) {

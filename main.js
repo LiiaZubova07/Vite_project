@@ -84,12 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     accordion.addEventListener('click', function () {
       this.classList.toggle('active');
       this.nextElementSibling.classList.toggle('show');
-
-      // if(this.classList.contains('active')){
-      // 	this.nextElementSibling.style.maxHeight=`${this.nextElementSibling.scrollHeight + 80}px`;
-      // } else{
-      // 	this.nextElementSibling.style.maxHeight='0';
-      // }
     });
   });
 

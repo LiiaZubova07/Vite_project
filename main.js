@@ -44,16 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
       /*блокировка стандартного действия элемента*/
       e.preventDefault();
       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
-      const modalId = this.getAttribute('data-modal');
-      const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+      // const modalId = this.getAttribute('data-modal');
+      // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
 
       const modalCloseBtn = document.querySelector('.modal__close');
       if (modalCloseBtn) {
         modalCloseBtn.focus();
       }
 
-      /*после нахождения модального окна добавитьклассы подложке и окну, чтобы показать их*/
-      modalElem.classList.add('active');
+      /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
+      document.querySelector('.modal').classList.add('active');
       overlay.classList.add('active');
     });
   });

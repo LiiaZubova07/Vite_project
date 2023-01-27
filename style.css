@@ -31,21 +31,19 @@ p {
 }
 
 .open__btn {
-	display: flex;
-	align-items: center;
-	text-align: center;
-	justify-content: center;
-	height: 50px;
+	width: 300px;
+	max-width: 900px;
 	padding: 20px;
 	font-weight: bold;
 	font-size: 20px;
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 0);
+	border-radius: 10px;
 }
 
 .open__btn:hover {
 	background-color: rgb(221, 49, 184);
-	color: rgb(0, 0, 0);
+	color: white;
 }
 
 .open__btn:focus {
@@ -123,19 +121,19 @@ p {
 /*----------------------------ACCORDION-------------------------------*/
 .accordion {
 	display: block;
-	width: 500px;
-	margin: 0 auto;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
+	max-width: 500px;
+	margin: 0 auto;
 	margin-bottom: 50px;
 }
 
 .accordion__block {
-	display: flex;
+	/* display: ib;
 	align-items: center;
 	text-align: center;
-	justify-content: center;
+	justify-content: center; */
 }
 
 .accordion__btn {
@@ -149,22 +147,17 @@ p {
 
 .accordion__btn:hover {
 	background-color: rgb(221, 49, 184);
-}
-
-.accordion__btn:active {
-	background-color: rgb(134, 33, 112);
-	width: 290px;
+	color: white;
 }
 
 .accordion__btn:focus {
-	background-color: rgb(221, 49, 184);
+	background-color: rgb(134, 33, 112);
+	color: white;
 }
 
 
 .accordion__title {
-	text-decoration: underline;
 	margin-bottom: 10px;
-
 }
 
 .accordion__title.active {}

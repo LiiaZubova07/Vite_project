@@ -29,24 +29,44 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	
-  const modalBtns = document.querySelectorAll('.js-modal__open');
+  const modalBtns = document.querySelector('.js-modal__open');
   const overlay = document.querySelector('.js-modal__overlay');
-  const closeBtns = document.querySelectorAll('.js-modal__close');
+  const closeBtns = document.querySelector('.js-modal__close');
   const removeActive = () => {
     document.querySelector('.modal.active').classList.remove('active');
     document.querySelector('.modal__overlay').classList.remove('active');
   };
 
   /*------------------------------перебор кнопок------------------------------*/
-  modalBtns.forEach((btn) => {
+//   modalBtns.forEach((btn) => {
+//     /*каждая кнопка при клике*/
+//     btn.addEventListener('click', function (e) {
+//       /*блокировка стандартного действия элемента*/
+//       e.preventDefault();
+//       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
+//       // const modalId = this.getAttribute('data-modal');
+//       // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+
+//       const modalCloseBtn = document.querySelector('.modal__close');
+//       if (modalCloseBtn) {
+//         modalCloseBtn.focus();
+//       }
+
+//       /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
+//       document.querySelector('.modal').classList.add('active');
+//       overlay.classList.add('active');
+//     });
+//   });
+
     /*каждая кнопка при клике*/
-    btn.addEventListener('click', function (e) {
+    modalBtns.addEventListener('click', function (e) {
       /*блокировка стандартного действия элемента*/
       e.preventDefault();
       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
       // const modalId = this.getAttribute('data-modal');
       // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
 
+		//фокус на крестике
       const modalCloseBtn = document.querySelector('.modal__close');
       if (modalCloseBtn) {
         modalCloseBtn.focus();
@@ -56,20 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.modal').classList.add('active');
       overlay.classList.add('active');
     });
-  });
-
-
-  /*---------------------------------фокус на крестике------------------------*/
 
   /*---------------------------------закрытие на крестик----------------------*/
-  closeBtns.forEach((btn) => {
-    btn.addEventListener('click', function (e) {
+//   closeBtns.forEach((btn) => {
+//     btn.addEventListener('click', function (e) {
+//       const parentModal = this.closest('.modal');
+
+//       parentModal.classList.remove('active');
+//       overlay.classList.remove('active');
+//     });
+//   });
+
+    closeBtns.addEventListener('click', function (e) {
       const parentModal = this.closest('.modal');
 
       parentModal.classList.remove('active');
       overlay.classList.remove('active');
     });
-  });
+
 
   /*-----------------------------------закрытие на ESC-------------------------*/
   document.addEventListener(

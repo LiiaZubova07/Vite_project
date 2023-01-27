@@ -29,9 +29,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	
-  const modalBtns = document.querySelector('.js-modal__open');
+  const modalBtn = document.querySelector('.js-modal__open');
   const overlay = document.querySelector('.js-modal__overlay');
-  const closeBtns = document.querySelector('.js-modal__close');
+  const closeBtn = document.querySelector('.js-modal__close');
   const removeActive = () => {
     document.querySelector('.modal.active').classList.remove('active');
     document.querySelector('.modal__overlay').classList.remove('active');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //   });
 
     /*каждая кнопка при клике*/
-    modalBtns.addEventListener('click', function (e) {
+    modalBtn.addEventListener('click', function (e) {
       /*блокировка стандартного действия элемента*/
       e.preventDefault();
       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     });
 //   });
 
-    closeBtns.addEventListener('click', function (e) {
+    closeBtn.addEventListener('click', function (e) {
       const parentModal = this.closest('.modal');
 
       parentModal.classList.remove('active');

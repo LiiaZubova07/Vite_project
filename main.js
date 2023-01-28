@@ -1,5 +1,3 @@
-// import './style.css';
-
 !(function (e) {
   'function' != typeof e.matches &&
     (e.matches =
@@ -28,70 +26,71 @@
 /*----------------------------------------------------------------------------------------------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
-  const modalBtns = document.querySelectorAll('.js-modal__open');
+  const modalBtn = document.querySelector('.js-modal__open');
   const overlay = document.querySelector('.js-modal__overlay');
-  const closeBtns = document.querySelectorAll('.js-modal__close');
+  const closeBtn = document.querySelector('.js-modal__close');
+  const accordions = document.querySelectorAll('.js__accordion');
+  const removeActive = () => {
+    document.querySelector('.modal.active').classList.remove('active');
+    document.querySelector('.modal__overlay').classList.remove('active');
+  };
 
   /*------------------------------перебор кнопок------------------------------*/
-  modalBtns.forEach((btn) => {
-    /*каждая кнопка при клике*/
-    btn.addEventListener('click', function (e) {
-      /*блокировка стандартного действия элемента*/
-      e.preventDefault();
-      /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
-      const modalId = this.getAttribute('data-modal');
-      const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+  /*каждая кнопка при клике*/
+  modalBtn.addEventListener('click', function (e) {
+    /*блокировка стандартного действия элемента*/
+    e.preventDefault();
+    /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
+    // const modalId = this.getAttribute('data-modal');
+    // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
 
-      /*после нахождения модального окна добавитьклассы подложке и окну, чтобы показать их*/
-      modalElem.classList.add('active');
-      overlay.classList.add('active');
-    });
+    //фокус на крестике
+    if (closeBtn) {
+      closeBtn.focus();
+    }
+
+    /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
+    document.querySelector('.modal').classList.add('active');
+    overlay.classList.add('active');
   });
-  /*---------------------------------закрытие на крестик----------------------*/
-  closeBtns.forEach((btn) => {
-    btn.addEventListener('click', function (e) {
-      const parentModal = this.closest('.modal');
 
-      parentModal.classList.remove('active');
-      overlay.classList.remove('active');
-    });
+  /*---------------------------------закрытие на крестик----------------------*/
+  closeBtn.addEventListener('click', function (e) {
+    const parentModal = this.closest('.modal');
+
+    parentModal.classList.remove('active');
+    overlay.classList.remove('active');
   });
 
   /*-----------------------------------закрытие на ESC-------------------------*/
   document.addEventListener(
-    'keyup',
+    'keydown',
     (e) => {
-      const key = e.keyCode;
-
-      if (key == 27) {
-        document.querySelector('.modal.active').classList.remove('active');
-        document.querySelector('.overlay').classList.remove('active');
+      if (e.key == 'Escape') {
+        removeActive();
       }
     },
     false
   );
 
-  overlay.addEventListener('click', function () {
-    document.querySelector('.modal.active').classList.remove('active');
-    this.classList.remove('active');
+  overlay.addEventListener('click', () => {
+    removeActive();
   });
 
   /*----------------------------------------ACCORDION--------------------------------------------------*/
-
-  const accordions = document.querySelectorAll('.js__accordion');
-
+  /*плавное открытие аккордиона*/
   accordions.forEach((accordion) => {
-    accordion.addEventListener('click', function () {
-      this.classList.toggle('active');
-      this.nextElementSibling.classList.toggle('show');
-
-      // if(this.classList.contains('active')){
-      // 	this.nextElementSibling.style.maxHeight=`${this.nextElementSibling.scrollHeight + 80}px`;
-      // } else{
-      // 	this.nextElementSibling.style.maxHeight='0';
-      // }
+    accordion.addEventListener('click', () => {
+      // accordion.classList.toggle('active');
+      const content = accordion.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
     });
   });
+
 
   /*----------------------------------------VIDEO--------------------------------------------------*/
 

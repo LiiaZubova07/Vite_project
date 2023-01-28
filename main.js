@@ -28,72 +28,70 @@
 /*----------------------------------------------------------------------------------------------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
-	
   const modalBtn = document.querySelector('.js-modal__open');
   const overlay = document.querySelector('.js-modal__overlay');
   const closeBtn = document.querySelector('.js-modal__close');
+  const accordions = document.querySelectorAll('.js__accordion');
   const removeActive = () => {
     document.querySelector('.modal.active').classList.remove('active');
     document.querySelector('.modal__overlay').classList.remove('active');
   };
 
   /*------------------------------перебор кнопок------------------------------*/
-//   modalBtns.forEach((btn) => {
-//     /*каждая кнопка при клике*/
-//     btn.addEventListener('click', function (e) {
-//       /*блокировка стандартного действия элемента*/
-//       e.preventDefault();
-//       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
-//       // const modalId = this.getAttribute('data-modal');
-//       // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+  //   modalBtns.forEach((btn) => {
+  //     /*каждая кнопка при клике*/
+  //     btn.addEventListener('click', function (e) {
+  //       /*блокировка стандартного действия элемента*/
+  //       e.preventDefault();
+  //       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
+  //       // const modalId = this.getAttribute('data-modal');
+  //       // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
 
-//       const modalCloseBtn = document.querySelector('.modal__close');
-//       if (modalCloseBtn) {
-//         modalCloseBtn.focus();
-//       }
+  //       const modalCloseBtn = document.querySelector('.modal__close');
+  //       if (modalCloseBtn) {
+  //         modalCloseBtn.focus();
+  //       }
 
-//       /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
-//       document.querySelector('.modal').classList.add('active');
-//       overlay.classList.add('active');
-//     });
-//   });
+  //       /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
+  //       document.querySelector('.modal').classList.add('active');
+  //       overlay.classList.add('active');
+  //     });
+  //   });
 
-    /*каждая кнопка при клике*/
-    modalBtn.addEventListener('click', function (e) {
-      /*блокировка стандартного действия элемента*/
-      e.preventDefault();
-      /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
-      // const modalId = this.getAttribute('data-modal');
-      // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+  /*каждая кнопка при клике*/
+  modalBtn.addEventListener('click', function (e) {
+    /*блокировка стандартного действия элемента*/
+    e.preventDefault();
+    /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
+    // const modalId = this.getAttribute('data-modal');
+    // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
 
-		//фокус на крестике
-      const modalCloseBtn = document.querySelector('.modal__close');
-      if (modalCloseBtn) {
-        modalCloseBtn.focus();
-      }
+    //фокус на крестике
+    if (closeBtn) {
+      closeBtn.focus();
+    }
 
-      /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
-      document.querySelector('.modal').classList.add('active');
-      overlay.classList.add('active');
-    });
+    /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
+    document.querySelector('.modal').classList.add('active');
+    overlay.classList.add('active');
+  });
 
   /*---------------------------------закрытие на крестик----------------------*/
-//   closeBtns.forEach((btn) => {
-//     btn.addEventListener('click', function (e) {
-//       const parentModal = this.closest('.modal');
+  //   closeBtns.forEach((btn) => {
+  //     btn.addEventListener('click', function (e) {
+  //       const parentModal = this.closest('.modal');
 
-//       parentModal.classList.remove('active');
-//       overlay.classList.remove('active');
-//     });
-//   });
+  //       parentModal.classList.remove('active');
+  //       overlay.classList.remove('active');
+  //     });
+  //   });
 
-    closeBtn.addEventListener('click', function (e) {
-      const parentModal = this.closest('.modal');
+  closeBtn.addEventListener('click', function (e) {
+    const parentModal = this.closest('.modal');
 
-      parentModal.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-
+    parentModal.classList.remove('active');
+    overlay.classList.remove('active');
+  });
 
   /*-----------------------------------закрытие на ESC-------------------------*/
   document.addEventListener(
@@ -111,15 +109,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /*----------------------------------------ACCORDION--------------------------------------------------*/
-
-  const accordions = document.querySelectorAll('.js__accordion');
-
   accordions.forEach((accordion) => {
     accordion.addEventListener('click', function () {
       this.classList.toggle('active');
       this.nextElementSibling.classList.toggle('show');
     });
   });
+
+
+  /*плавное открытие аккордиона*/
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('click', () => {
+      accordion.classList.toggle('active');
+      const content = accordion.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
 
   /*----------------------------------------VIDEO--------------------------------------------------*/
 

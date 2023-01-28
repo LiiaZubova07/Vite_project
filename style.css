@@ -93,7 +93,7 @@ p {
 	background-color: rgba(219, 0, 219, 0.925);
 	color: white;
 
-	transition: all 0.8s ease 0s;
+	transition: all 0.8s;
 	overflow: auto;
 }
 
@@ -103,6 +103,7 @@ p {
 	opacity: 1;
 	visibility: visible;
 }
+
 
 .modal__close {
 	position: absolute;
@@ -114,6 +115,7 @@ p {
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
+
 }
 
 .modal__title {
@@ -172,11 +174,9 @@ p {
 }
 
 .accordion__content {
-	transition: all 0.5s;
-	display: none;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.6s ease-out;
 }
 
 .accordion__content.show {
@@ -192,6 +192,7 @@ p {
 	font-size: 15px;
 	margin-bottom: 30px;
 }
+
 
 /*--------------------------------VIDEO---------------------------------*/
 .p__video {

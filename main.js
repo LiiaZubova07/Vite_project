@@ -1,5 +1,3 @@
-// import './style.css';
-
 !(function (e) {
   'function' != typeof e.matches &&
     (e.matches =
@@ -38,26 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /*------------------------------перебор кнопок------------------------------*/
-  //   modalBtns.forEach((btn) => {
-  //     /*каждая кнопка при клике*/
-  //     btn.addEventListener('click', function (e) {
-  //       /*блокировка стандартного действия элемента*/
-  //       e.preventDefault();
-  //       /*забрать содержимое data-modal и искать модальное окно с таким же modal-data*/
-  //       // const modalId = this.getAttribute('data-modal');
-  //       // const modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
-
-  //       const modalCloseBtn = document.querySelector('.modal__close');
-  //       if (modalCloseBtn) {
-  //         modalCloseBtn.focus();
-  //       }
-
-  //       /*после нахождения модального окна добавить классы подложке и окну, чтобы показать их*/
-  //       document.querySelector('.modal').classList.add('active');
-  //       overlay.classList.add('active');
-  //     });
-  //   });
-
   /*каждая кнопка при клике*/
   modalBtn.addEventListener('click', function (e) {
     /*блокировка стандартного действия элемента*/
@@ -77,15 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /*---------------------------------закрытие на крестик----------------------*/
-  //   closeBtns.forEach((btn) => {
-  //     btn.addEventListener('click', function (e) {
-  //       const parentModal = this.closest('.modal');
-
-  //       parentModal.classList.remove('active');
-  //       overlay.classList.remove('active');
-  //     });
-  //   });
-
   closeBtn.addEventListener('click', function (e) {
     const parentModal = this.closest('.modal');
 
@@ -112,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /*плавное открытие аккордиона*/
   accordions.forEach((accordion) => {
     accordion.addEventListener('click', () => {
-      accordion.classList.toggle('active');
+      // accordion.classList.toggle('active');
       const content = accordion.nextElementSibling;
       if (content.style.maxHeight) {
         content.style.maxHeight = null;

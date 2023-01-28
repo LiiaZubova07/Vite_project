@@ -152,6 +152,11 @@ p {
 	border-radius: 10px;
 }
 
+.accordion.active{
+	opacity: 1;
+	visibility: visible;
+}
+
 .accordion__btn:hover {
 	background-color: rgb(221, 49, 184);
 	color: white;

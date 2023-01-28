@@ -109,12 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /*----------------------------------------ACCORDION--------------------------------------------------*/
-  accordions.forEach((accordion) => {
-    accordion.addEventListener('click', function () {
-      this.classList.toggle('active');
-      this.nextElementSibling.classList.toggle('show');
-    });
-  });
+//   accordions.forEach((accordion) => {
+//     accordion.addEventListener('click', function () {
+//       this.classList.toggle('active');
+//       this.nextElementSibling.classList.toggle('show');
+//     });
+//   });
 
 
   /*плавное открытие аккордиона*/
